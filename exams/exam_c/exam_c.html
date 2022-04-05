@@ -1,0 +1,148 @@
+<p></p>
+<h1 id="c-exam">C Exam</h1>
+<h3 id="question-1">Question 1</h3>
+<p>Implement a function which reverses (mirrors) the order of digits in a number. For example, if <code>val</code> is 58, <code>Flip</code> returns 85. If <code>val</code> is -520, <code>Flip</code> returns -25.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> FlipDigitsInNum(<span class="dt">int</span>)</code></pre></div>
+<h3 id="question-2">Question 2</h3>
+<p>What is the hexadecimal representation of the binary value <code>11001110100110011101100011110111</code> ?</p>
+<h3 id="question-3">Question 3</h3>
+<p>What is the value of an uninitialized variable?</p>
+<h3 id="question-4">Question 4</h3>
+<ul>
+<li><p>Implement a function that mirrors the order of bits in a byte.</p></li>
+<li><p>What is the fastest way to get the mirror value of a byte?</p></li>
+</ul>
+<h3 id="question-5">Question 5</h3>
+<p>Implement the following function which flips the value of bit <code>n</code> (lsb is index 0) in 'val':</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> FlipBit(<span class="dt">int</span> val, <span class="dt">unsigned</span> <span class="dt">int</span> n)</code></pre></div>
+<h3 id="question-6">Question 6</h3>
+<ul>
+<li><p>Implement a function that counts the number of on bits ("1"s) in a byte.</p></li>
+<li><p>Explain how you would do this for a <code>byte</code> as quickly as possible.</p></li>
+<li><p>Explain how you would do this for a <code>short</code> as quickly as possible.</p></li>
+<li><p>Explain how you would do this for a <code>long</code> as quickly as possible.</p></li>
+</ul>
+<h3 id="question-7">Question 7</h3>
+<ul>
+<li><p>What is <code>size_t</code> used for?</p></li>
+<li><p>What are the differences between <code>size_t</code> and <code>int</code>?</p></li>
+</ul>
+<h3 id="question-8">Question 8</h3>
+<p>Implement the following function:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> RotateLeft(<span class="dt">char</span> byte, <span class="dt">unsigned</span> <span class="dt">int</span> nbits).</code></pre></div>
+<h3 id="question-9">Question 9</h3>
+<ul>
+<li>If one creates a binary (not text) file containing the int values 0-100 on one computer and tries to read it on a second computer, what would cause the numbers to appear different on the second computer?</li>
+</ul>
+<h3 id="question-10">Question 10</h3>
+<ul>
+<li>Implement a function that swaps two pointers to ints. For example, if i and j are ints, p1 points to i and p2 points to j. After the function is run, p1 should point to j and p2 should point to i.</li>
+</ul>
+<h3 id="question-11">Question 11</h3>
+<p>Implement the following functions. If you are unsure what the prototype should be, think about what makes the most sense.</p>
+<ul>
+<li><code>Strlen</code></li>
+<li><p><code>Strcmp</code></p></li>
+<li><p><code>Strcpy</code></p></li>
+<li><p><code>Strncpy</code></p></li>
+<li><p><code>Strcat</code></p></li>
+</ul>
+<h3 id="question-12">Question 12</h3>
+<ul>
+<li><p>Implement the following function which returns the value of the nth element in a Fibonacci series.</p></li>
+<li><p>Fibonacci series: <code>1, 1, 2, 3, 5, 8, 13, 21...,</code> whereas the index of the first element is 1.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">unsigned</span> <span class="dt">long</span> GetNFibonacciElement(<span class="dt">unsigned</span> <span class="dt">int</span> n)</code></pre></div></li>
+</ul>
+<h3 id="question-13">Question 13</h3>
+<p>Implement the function <code>IntToString</code>. You may use <code>sprintf</code>.</p>
+<h3 id="question-14">Question 14</h3>
+<p>Implement a function that uses the shift operator to multiply a number by 8.</p>
+<h3 id="question-15">Question 15</h3>
+<ul>
+<li><p>Swap the value of two int variables in three different ways. In two of the ways, do not use a temporary variable.</p></li>
+<li><p>Which of the three ways is the best?</p></li>
+</ul>
+<h3 id="question-16">Question 16</h3>
+<p>What would be the output of the following program when run on a 64-bit machine?</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> foo()
+{
+    <span class="dt">char</span> *s1 = “hello”;
+    <span class="dt">char</span> s2[] = “hello”;
+    <span class="dt">char</span> *s3 = s1;
+    printf(“%lu %lu %lu %lu\n”,
+            <span class="kw">sizeof</span>(s1),<span class="kw">sizeof</span>(s2),strlen(s1),strlen(s2));
+    s3[<span class="dv">0</span>] = <span class="ch">'H'</span>;
+    printf(“%s \n”, s3);
+}</code></pre></div>
+<h3 id="question-17">Question 17</h3>
+<p>What is the output of the following program?</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> foo()
+{
+    <span class="dt">size_t</span> array [] = {<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>};
+    <span class="dt">size_t</span> val = <span class="dv">3</span>;
+    printf(“%lu \n”, val[array]);
+}</code></pre></div>
+<h3 id="question-18">Question 18</h3>
+<p>Explain:</p>
+<ul>
+<li><p>Static global variable</p></li>
+<li><p>Static local variable</p></li>
+<li><p>Static function</p></li>
+<li><p>Static library</p></li>
+<li><p>Static link</p></li>
+</ul>
+<h3 id="question-19">Question 19</h3>
+<p>Where are the following keywords used? Explain each.</p>
+<ul>
+<li><p><code>auto</code></p></li>
+<li><p><code>register</code></p></li>
+<li><p><code>volatile</code></p></li>
+<li><p><code>default</code></p></li>
+<li><p><code>extern</code></p></li>
+</ul>
+<h3 id="question-20">Question 20</h3>
+<p>What is <code>sizeof(int)</code> (Intel processor)?</p>
+<ul>
+<li><p>On a 32-bit architecture?</p></li>
+<li><p>On a 64-bit architecture?</p></li>
+</ul>
+<h3 id="question-21">Question 21</h3>
+<p>What is <code>sizeof(struct s)</code> (Intel processor)?</p>
+<ul>
+<li><p>On a 32-bit architecture?</p></li>
+<li><p>On a 64-bit architecture?</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">struct</span> S
+{
+    <span class="dt">int</span> *i;
+    <span class="dt">char</span> c;
+    <span class="dt">short</span> s;
+    <span class="dt">int</span> *j;
+};</code></pre></div>
+<h3 id="question-22">Question 22</h3>
+<p>What is <code>sizeof(struct s)</code> (Intel processor)?</p>
+<ul>
+<li><p>On a 32-bit architecture?</p></li>
+<li><p>On a 64-bit architecture?</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">struct</span> S
+{
+    <span class="dt">unsigned</span> <span class="dt">int</span> i : <span class="dv">2</span>;
+    <span class="dt">unsigned</span> <span class="dt">char</span> c : <span class="dv">1</span>;
+    <span class="dt">unsigned</span> <span class="dt">short</span> s : <span class="dv">3</span>;
+    <span class="dt">int</span> *j;
+    <span class="dt">unsigned</span> <span class="dt">char</span> x : <span class="dv">2</span>;
+};</code></pre></div>
+<h3 id="question-23">Question 23</h3>
+<p>In the union below:</p>
+<ul>
+<li><p>Is 'jack' a type or a variable?</p></li>
+<li><p>What is <code>sizeof(jack)</code>?</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">union</span>
+{
+    <span class="dt">char</span> array[<span class="dv">7</span>];
+    <span class="dt">int</span> i;
+    <span class="dt">short</span> s;
+} jack;</code></pre></div>
+<!-- <hr> -->

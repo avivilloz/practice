@@ -1,0 +1,134 @@
+<p></p>
+<h1 id="c-exam">C++ Exam</h1>
+<h2 id="part-1">Part 1</h2>
+<ul>
+<li><p>Implement class <strong><code>String</code></strong>, which allows for the following operations:</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp">String str1 = <span class="st">"hello world"</span>;
+String str2(str1);
+str2 = str1;
+cout &lt;&lt; str2 &lt;&lt; endl;
+cin &gt;&gt; str1;</code></pre></div></li>
+</ul>
+<h2 id="part-2">Part 2</h2>
+<ul>
+<li><p>Answer the questions following this code block:</p>
+<div class="sourceCode"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dv">0</span>   <span class="er">#</span>include &lt;iostream&gt;
+<span class="dv">1</span>   <span class="kw">using</span> <span class="kw">namespace</span> std;
+<span class="dv">2</span>
+<span class="dv">3</span>   <span class="kw">class</span> Base
+<span class="dv">4</span>   {
+<span class="dv">5</span>   <span class="kw">public</span>:
+<span class="dv">6</span>       Base(<span class="dt">int</span> i): <span class="va">m_i</span>(i), <span class="va">m_iptr</span>(&amp;<span class="va">m_i</span>) {}
+<span class="dv">7</span>
+<span class="dv">8</span>       <span class="kw">virtual</span> <span class="dt">void</span> foo() { cout &lt;&lt; *(<span class="va">m_iptr</span>) &lt;&lt; endl; }
+<span class="dv">9</span>       <span class="kw">virtual</span> <span class="dt">void</span> bar() { cout &lt;&lt; <span class="va">m_i</span> &lt;&lt; endl; }
+<span class="dv">10</span>
+<span class="dv">11</span>  <span class="kw">protected</span>:
+<span class="dv">12</span>      <span class="kw">virtual</span> ~Base() = <span class="dv">0</span>;
+<span class="dv">13</span>
+<span class="dv">14</span>  <span class="kw">private</span>:
+<span class="dv">15</span>      <span class="dt">int</span> <span class="va">m_i</span>;
+<span class="dv">16</span>      <span class="dt">int</span> *<span class="va">m_iptr</span>;
+<span class="dv">17</span>  };
+<span class="dv">18</span>
+<span class="dv">19</span>  <span class="kw">inline</span> Base::~Base() {}
+<span class="dv">20</span>
+<span class="dv">21</span>  <span class="kw">class</span> Derived: <span class="kw">public</span> Base
+<span class="dv">22</span>  {
+<span class="dv">23</span>  <span class="kw">public</span>:
+<span class="dv">24</span>      Derived(<span class="dt">int</span> i, <span class="dt">char</span> c): <span class="va">m_c</span>(c), Base(i), <span class="va">m_c2</span>(c) {}
+<span class="dv">25</span>      <span class="dt">void</span> bar() { foo(); Base::foo(); }
+<span class="dv">26</span>
+<span class="dv">27</span>  <span class="kw">private</span>:
+<span class="dv">28</span>      <span class="dt">void</span> foo() { cout &lt;&lt; <span class="va">m_c</span> &lt;&lt; endl; }
+<span class="dv">29</span>      <span class="dt">char</span> <span class="va">m_c</span>, <span class="va">m_c2</span>;
+<span class="dv">30</span>  };
+<span class="dv">31</span>
+<span class="dv">32</span>  <span class="kw">class</span> OtherDerived: <span class="kw">public</span> Base
+<span class="dv">33</span>  {
+<span class="dv">34</span>  };
+<span class="dv">35</span>
+<span class="dv">36</span>  <span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span> **argv)
+<span class="dv">37</span>  {
+<span class="dv">38</span>      Derived d1(<span class="dv">5</span>,<span class="st">'x'</span>);
+<span class="dv">39</span>      Derived d2(<span class="dv">3</span>,<span class="st">'w'</span>);
+<span class="dv">40</span>
+<span class="dv">41</span>      Base *b1 = &amp;d1;
+<span class="dv">42</span>      b1-&gt;foo();
+<span class="dv">43</span>      b1-&gt;bar();
+<span class="dv">44</span> 
+<span class="dv">45</span>      Base *b2 = &amp;d2;
+<span class="dv">46</span>      *b2 = *b1;
+<span class="dv">47</span>      b2-&gt;foo();
+<span class="dv">48</span>      d2.bar();
+<span class="dv">49</span>
+<span class="dv">50</span>      <span class="cf">return</span> <span class="dv">0</span>;
+<span class="dv">51</span> }</code></pre></div></li>
+</ul>
+<ol>
+<li><p>On line 12, what is the meaning of <code>= 0</code>?</p></li>
+<li><p>Why is it possible, despite line 12, to instantiate variables <code>d1</code> and <code>d2</code> on line 38 and 39?</p></li>
+<li><p>Explain why line 19 is necessary.</p></li>
+<li><p>What are the implications of a protected destructor?</p></li>
+<li><p>Is there a destructor for <code>Derived</code>? If so, is it public or protected?</p></li>
+<li><p>On line 24, which is called first; <code>m_c(c)</code>, <code>Base(i)</code> or <code>m_c(c)2</code>? Why?</p></li>
+<li><p>On line 42, the call to <code>foo()</code> invokes the method on which line? Why?</p></li>
+<li><p>Write a copy constructor for class <code>Derived</code>.</p></li>
+<li><p>On line 32, what methods does the compiler generate for class <code>OtherDerived?</code></p>
+<ul>
+<li>Implement those (generated) methods for class <code>OtherDerived</code>.</li>
+</ul></li>
+<li><p>Why can't the programmer create an object of type <code>OtherDerived</code>? What would be the compilation error when trying to do so?</p></li>
+<li><p>What does the program print?</p></li>
+</ol>
+<h2 id="part-3">Part 3</h2>
+<ul>
+<li>Classes and methods:</li>
+</ul>
+<ol>
+<li>Explain function overloading vs. function overriding vs. function hiding.</li>
+<li>Write an example of function hiding.</li>
+<li>Show a code example of a class in which the constructor cannot be compiled without a MIL.</li>
+<li>What is the lifetime of a static class member?</li>
+<li>What is the difference between a global function and a static class member function?</li>
+<li>What does the <code>inline</code> keyword do? Be precise.</li>
+<li>What is the Rule of Three? Why does it exist? What happens if we don't follow it?</li>
+<li><p>Can you call an assignment operator from a copy constructor? For example:</p>
+<div class="sourceCode"><pre class="sourceCode c++"><code class="sourceCode cpp">*<span class="kw">this</span> = other;</code></pre></div></li>
+</ol>
+<h2 id="part-4">Part 4</h2>
+<ul>
+<li><p>Polymorphism:</p>
+<p><strong>Note:</strong> All the questions in this part refer to <strong>runtime</strong> polymorphism.</p></li>
+</ul>
+<ol>
+<li>Does polymorphism work with references? Can you reference a derived class object using a base class reference – and call a virtual function correctly with it?</li>
+<li>Where is VPTR located in object memory?</li>
+<li>What are the performance implications (space and time) of polymorphism?</li>
+</ol>
+<h2 id="part-5">Part 5</h2>
+<ul>
+<li>Exceptions:</li>
+</ul>
+<ol>
+<li>What is an exception-safe code, with respect to Ctors, Dtors, const functions and non-const functions?</li>
+<li>Explain <code>RAII</code>.</li>
+<li>In what order are catch blocks being checked?</li>
+</ol>
+<h2 id="part-6">Part 6</h2>
+<ul>
+<li>Class Point: Implement class <strong><code>Point</code></strong>. Allow the following operations. Be strict about where you implement functions (members or globals), about code reuse, etc.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode c++"><code class="sourceCode cpp">    Point&lt;<span class="dt">int</span>&gt; p1(<span class="dv">5</span>,<span class="dv">6</span>);
+    Point&lt;<span class="dt">int</span>&gt; p2(<span class="dv">12</span>,<span class="dv">18</span>);
+    Point&lt;<span class="dt">int</span>&gt; p3;
+    p3 = p1 + p2;
+    Point&lt;<span class="dt">int</span>&gt; p4 = p3 - p1;
+    Point&lt;<span class="dt">int</span>&gt; p5(<span class="dv">0</span>,<span class="dv">0</span>);
+    assert(p4==p2);
+    Point&lt;<span class="dt">int</span>&gt; p6(p1);
+    p6 += <span class="dv">1</span>;
+    assert(p6 == Point&lt;<span class="dt">int</span>&gt;(<span class="dv">6</span>,<span class="dv">7</span>));
+    p2 /= <span class="dv">2</span>;
+    assert(p2 == Point&lt;<span class="dt">int</span>&gt;(<span class="dv">6</span>,<span class="dv">9</span>)); </code></pre></div>
+<!-- <hr> -->

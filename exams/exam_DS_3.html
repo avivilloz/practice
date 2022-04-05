@@ -1,0 +1,60 @@
+<p></p>
+<h1 id="data-structures-exam-3">Data Structures Exam 3</h1>
+<ol>
+<li><p>Implement an array data structure with the following functions in <code>O(1)</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">    <span class="fl">1.</span> <span class="dt">void</span> setval(<span class="dt">int</span> indx, <span class="dt">int</span> val); 
+    <span class="fl">2.</span> <span class="dt">int</span> getval(<span class="dt">int</span> indx);
+    <span class="fl">3.</span> <span class="dt">void</span> setall(<span class="dt">int</span> val);  (no memset);</code></pre></div></li>
+<li><p>Given an array of unsigned ints and some number “sum_of_two”, write a function finding two array values that gives the sum of the given number (sum_of_two). Also write the time complexity of your solution.</p></li>
+<li><p>Implement a “find” function that receives an array of chars and size of the array. The function checks whether the char is in the array. You are not allowed to use <code>if</code> nor the ternary operator.</p></li>
+<li><p>Given an array of chars, write a function that performs an efficient <code>n</code> bytes circular shift in-place (don't do a 1 circular shift n times).</p></li>
+<li><p>Given a 2D bitmap of <code>1</code>s and <code>0</code>s, <code>0</code> represents sea and <code>1</code> represents shore. Implement a function finding how many islands the map contains.</p></li>
+<li><p>We use a stack for saving our data – <em>“data_stack”</em>. Design a stack <em>“min_stack”</em> which allows us to get the minimum value of data_stack in <code>O(1)</code>.</p></li>
+<li><p>Write a function that receives a string, checks whether its parentheses ( <code>(), [], {}, &lt;&gt;</code>) are arranged correctly, and returns <code>0</code> or <code>1</code>. Example:</p>
+<ul>
+<li><code>"(x + 3 * [4 + 6]) &lt;&gt;"</code> would return <code>1</code><br>
+</li>
+<li><code>"(8 ]* (6 + 2) + 1)"</code> would return <code>0</code><br>
+</li>
+<li><code>"[(8 ]* (6 + 2) + 1)"</code> would return <code>0</code></li>
+</ul></li>
+<li><p>Recursion:</p>
+<p>a. Give an example of a recursive function. What happens if you don't write a stop condition?</p>
+<p>b. Write a recursive function which does arithmetic operations such as multiplication and division of two integers without using <code>*</code> or <code>/</code>.</p>
+<p>c. Write a recursive function which receives an integer and returns its argument incremented by <code>1</code>. You may not use addition.</p></li>
+<li><p>Sort:</p>
+<p>a. Which sorting algorithms do you know? Specify the average time complexity and memory complexity for each.</p>
+<p>b. What is a stable sort? Which sorts are stable?</p>
+<p>c. Write a function that receives a linked list and a pivot value <code>x</code>, and arranges the linked list according to the pivot (pivot does not have to be equal to one of the list’s elements). Each value bigger or equal to <code>x</code> will appear after <code>x</code>, and every value smaller will appear before <code>x</code>.</p>
+d. You are given 100K text files. Each has a sorted array of 10 numbers. Your goal is to combine all 100K arrays into one sorted array.
+<ul>
+<li>What sorting algorithm would you choose? Why?</li>
+<li>What is the bottleneck in the program?</li>
+</ul></li>
+<li><p>Given a dictionary, find a quick way to find all anagrams of a given word that are valid dictionary words. You can prepare in advance any required code or data structure.</p>
+<p>For example, <code>live</code>, <code>vile</code>, <code>veil</code> and <code>evil</code> are anagrams.</p></li>
+<li><p>Design the data structures and interfaces for a hash table:</p>
+<p>a. Write the interface for a hash table.</p>
+<p>b. Describe the time complexity of the relevant functions.</p>
+<p>c. Give an example of when you would use a hash table.</p></li>
+<li><p>Design the data structures and interfaces for a heap:</p>
+<p>a. Describe the purpose of the heap data structure. Give an example of when you would use it.</p>
+<p>b. Write the interface for a heap.</p>
+<p>c. Describe the time complexity of the relevant functions.</p></li>
+<li><p>Binary tree, binary search, IP:</p>
+<p>a. Implement an iterative and recursive insertion to a binary tree.</p>
+<p>b. What is the complexity of <code>insert</code> to a binary search tree?</p>
+<p>c. In the IPv4 protocol, the IP address belongs to some geographical region, and its format is: <code>xxx.xxx.xxx.xxx</code>. For example:</p>
+<ul>
+<li>All IP addresses between <code>10.7.8.10</code> and <code>10.7.20.250</code> belong to Eilat, Israel. Thus <code>10.7.13.62</code> is an address in Eilat, Israel.</li>
+<li>IP addresses between <code>10.8.9.9</code> and <code>10.8.20.40</code> belong to Rishon-Le-Zion, Israel.</li>
+</ul>
+<p>d. Offer a way to store the data, so that given an IP address, you can efficiently discover to which city it belongs.</p></li>
+<li><p>You are given a map of roads and cities. A road is always straight, has a length, and connects two cities, bi-directionally.</p>
+<ul>
+<li>Offer a data structure to store the information about the map.<br>
+</li>
+<li>The data structure should allow an efficient search for a direct connection between two cities, to be used by algorithms for solving the shortest path problem, for example.</li>
+</ul></li>
+</ol>
+<!-- <hr> -->
