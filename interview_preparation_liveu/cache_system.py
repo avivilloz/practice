@@ -8,7 +8,6 @@ class CacheSystem:
         def thread_timer(self, object, id, callback, timeout):
             time.sleep(timeout)
             callback(object, id)
-            self.threads[id].join()
             self.threads.pop(id)
 
         def start_timer(self, object, id, callback, timeout):
