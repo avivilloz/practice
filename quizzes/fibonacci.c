@@ -10,7 +10,7 @@ int fibIter(int i)
 {
     int prev = 0, res = 1;
 
-    for (; i > 1; --i)
+    for (; i > 0; --i)
     {
         int temp = res;
         res += prev;
@@ -32,7 +32,7 @@ int fibRec(int i)
 
 int main(void)
 {
-    printf("%d\n", fibIter(5));
+    printf("%d\n", fibIter(8));
     printf("%d\n", fibRec(5));
 
     return 0;
